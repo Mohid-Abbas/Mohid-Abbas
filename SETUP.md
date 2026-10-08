@@ -1,7 +1,19 @@
-# Setup
+# Setup (about 5 minutes)
 
-This repository is the `Mohid-Abbas/Mohid-Abbas` profile README repository.
+1. **Repo name must equal your username**: `Mohid-Abbas/Mohid-Abbas`, public, default branch `main`.
+   Push the contents of this folder to it.
+2. **Actions → Workflow permissions**: Settings → Actions → General → *Read and write permissions*
+   (only needed if the first run fails with a 403 on `git push`).
+3. The push itself triggers the first run, which **replaces the demo data** in this zip with your
+   real activity. You can also press *Actions → Update profile → Run workflow*.
+4. **Private work missing from the graph?** The built-in token only sees public activity. Create a
+   classic personal access token with just `read:user`, add it as a repo secret named `PROFILE_TOKEN`.
+   Also tick *Profile → Contribution settings → Include private contributions*.
+5. Edit `config/profile.toml` (text, stack, which repos count as hardware) or `README.template.md`
+   (layout). Never edit `README.md`; it is overwritten.
 
-The profile uses two animated GIFs because GitHub's current documentation says SVG files do not support inline scripting or animation when rendered on GitHub. GIF is therefore used for the robot and contribution animation.
+Change which projects show: **pin/unpin repos on GitHub**. The next run picks it up.
 
-The workflow reads the public contribution calendar through GitHub's GraphQL API, renders it into `assets/heatmap/contributions.gif`, and refreshes it daily. It also runs on every push to `main`, so the first graph is generated automatically after you upload the repository.
+Preview locally without touching GitHub: `python3 scripts/build.py --demo` (invented data) or
+`python3 scripts/build.py --offline` (re-render from the last fetched `data/profile.json`).
+Requires Python 3.11+. No packages to install.
