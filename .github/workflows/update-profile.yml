@@ -1,6 +1,8 @@
 name: Update Profile Art
 
 on:
+  push:
+    branches: [main]
   schedule:
     - cron: "17 6 * * *"
   workflow_dispatch:
@@ -20,9 +22,12 @@ jobs:
 
       - run: pip install -r scripts/requirements-actions.txt
       - run: python scripts/fetch_contributions.py
-      - run: python scripts/render_heatmap_svg.py
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - run: python scripts/test_contributions.py
+      - run: python scripts/render_contributions_gif.py
 
       - uses: stefanzweifel/git-auto-commit-action@v7
         with:
           commit_message: "chore: refresh contribution graph [skip ci]"
-          file_pattern: "data/contributions.json assets/heatmap/contributions.svg"
+          file_pattern: "data/contributions.json assets/heatmap/contributions.gif"
