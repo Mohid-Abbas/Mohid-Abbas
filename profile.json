@@ -1,0 +1,23 @@
+{
+  "name": "Muhammad Mohid Abbas",
+  "username": "Mohid-Abbas",
+  "role": "BSAI Student",
+  "focus": "AI / Robotics / Embedded Systems",
+  "bio": "Building intelligent systems that connect AI with the physical world.",
+  "email": "mohidabbas.ai@gmail.com",
+  "github": "https://github.com/Mohid-Abbas",
+  "linkedin": "https://www.linkedin.com/in/muhammad-mohid-abbas/",
+  "portfolio": "",
+  "projects": [
+    ["MediDash", "Autonomous Medical Delivery Robot"],
+    ["RAG Document Assistant", "Retrieval-Augmented AI System"],
+    ["Saiyan AR", "Real-Time Computer Vision / AR"],
+    ["Synapse", "Wearable AI Companion"]
+  ],
+  "stack": {
+    "AI / ML": ["Python", "PyTorch", "Machine Learning", "Generative AI"],
+    "AI Systems": ["RAG", "AI Agents", "LangGraph", "n8n"],
+    "Robotics": ["ROS2", "ESP32", "PID Control", "Sensors"],
+    "Tools": ["Git", "GitHub", "Linux", "VS Code"]
+  }
+}
