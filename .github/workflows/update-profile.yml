@@ -1,33 +1,62 @@
-name: Update Profile Art
+name: Update profile
 
 on:
+  schedule:
+    - cron: "17 */6 * * *"          # every 6 hours (UTC); GitHub may delay it a few minutes
+  workflow_dispatch:                 # "Run workflow" button in the Actions tab
   push:
     branches: [main]
-  schedule:
-    - cron: "17 6 * * *"
-  workflow_dispatch:
+    paths:                           # edit config/template/scripts → rebuild right away
+      - "config/**"
+      - "scripts/**"
+      - "README.template.md"
+      - ".github/workflows/update-profile.yml"
 
 permissions:
-  contents: write
+  contents: write                    # commit the regenerated files
+  actions: write                     # re-enable this schedule (see last step)
+
+concurrency:
+  group: update-profile
+  cancel-in-progress: false
 
 jobs:
   update:
     runs-on: ubuntu-latest
+    timeout-minutes: 10
     steps:
       - uses: actions/checkout@v4
 
       - uses: actions/setup-python@v5
         with:
-          python-version: "3.11"
+          python-version: "3.12"     # scripts use only the standard library (tomllib needs 3.11+)
 
-      - run: pip install -r scripts/requirements-actions.txt
-      - run: python scripts/fetch_contributions.py
+      - name: Regenerate README and SVGs
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      - run: python scripts/test_contributions.py
-      - run: python scripts/render_contributions_gif.py
+          # Optional secret: a classic PAT with only `read:user`. Without it the
+          # built-in token sees PUBLIC activity only (private work won't show).
+          PROFILE_TOKEN: ${{ secrets.PROFILE_TOKEN }}
+          GITHUB_TOKEN: ${{ github.token }}
+          GITHUB_REPOSITORY_OWNER: ${{ github.repository_owner }}
+        run: python scripts/build.py
 
-      - uses: stefanzweifel/git-auto-commit-action@v7
-        with:
-          commit_message: "chore: refresh contribution graph [skip ci]"
-          file_pattern: "data/contributions.json assets/heatmap/contributions.gif"
+      - name: Commit if anything changed
+        run: |
+          git config user.name  "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add README.md assets/generated data/profile.json
+          if git diff --cached --quiet; then
+            echo "Nothing changed."
+          else
+            git commit -m "chore(profile): refresh generated assets"
+            git pull --rebase --autostash
+            git push
+          fi
+
+      # Scheduled workflows in public repos are switched off after 60 days
+      # without repo activity. Re-enabling is a harmless no-op while enabled.
+      - name: Keep the schedule alive
+        if: always()
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: gh workflow enable update-profile.yml --repo "${{ github.repository }}" || true
