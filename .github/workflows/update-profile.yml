@@ -13,12 +13,15 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+
       - uses: actions/setup-python@v5
         with:
           python-version: "3.11"
+
       - run: pip install -r scripts/requirements-actions.txt
       - run: python scripts/fetch_contributions.py
       - run: python scripts/render_heatmap_svg.py
+
       - uses: stefanzweifel/git-auto-commit-action@v7
         with:
           commit_message: "chore: refresh contribution graph [skip ci]"
