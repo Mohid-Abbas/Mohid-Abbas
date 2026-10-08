@@ -4,13 +4,11 @@
 
 ### AI • ROBOTICS • EMBEDDED SYSTEMS
 
-> Building intelligent systems that connect AI with the physical world.
+Building intelligent systems that connect AI with the physical world.
 
 <img src="./assets/robot/robot.gif" width="190" alt="Animated robot mascot">
 
-[GitHub](https://github.com/Mohid-Abbas) ·
-[LinkedIn](https://www.linkedin.com/in/muhammad-mohid-abbas/) ·
-[Email](mailto:mohidabbas.ai@gmail.com)
+[GitHub](https://github.com/Mohid-Abbas) · [LinkedIn](https://www.linkedin.com/in/muhammad-mohid-abbas/) · [Email](mailto:mohidabbas.ai@gmail.com)
 
 </div>
 
@@ -21,7 +19,7 @@ mohid@github:~$ ./contributions.sh
 ```
 
 <div align="center">
-<img src="./assets/heatmap/contributions.svg" width="900" alt="GitHub contribution heatmap">
+<img src="./assets/heatmap/contributions.gif" width="900" alt="Animated GitHub contribution heatmap">
 </div>
 
 ```text
@@ -67,9 +65,7 @@ mohid@github:~$ cat tech_stack/
 mohid@github:~$ connect
 ```
 
-[GitHub](https://github.com/Mohid-Abbas) ·
-[LinkedIn](https://www.linkedin.com/in/muhammad-mohid-abbas/) ·
-[Email](mailto:mohidabbas.ai@gmail.com)
+[GitHub](https://github.com/Mohid-Abbas) · [LinkedIn](https://www.linkedin.com/in/muhammad-mohid-abbas/) · [Email](mailto:mohidabbas.ai@gmail.com)
 
 <div align="center">
 
