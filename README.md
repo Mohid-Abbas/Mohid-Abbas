@@ -1,74 +1,27 @@
-<div align="center">
+<!--
+  GENERATED FILE NOTICE: README.md is overwritten by a GitHub Action.
+  Edit config/profile.toml (data & text) or THIS template (layout & prose).
+-->
+<p align="center"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/generated/hero-dark.svg?v=8a024432"><source media="(prefers-color-scheme: light)" srcset="assets/generated/hero-light.svg?v=cb778229"><img alt="I build AI systems that do real work. — RAG assistants with a FastAPI backend, n8n + LangGraph agent workflows, ML pipelines on sensor data, ESP32 robots and wearables" src="assets/generated/hero-dark.svg?v=8a024432" width="100%"></picture></p>
 
-# `Mohid-Abbas`
+<p align="center"><a href="https://www.linkedin.com/in/muhammad-mohid-abbas"><b>LinkedIn</b></a>  ·  <a href="mailto:mohidabbas.ai@gmail.com"><b>mohidabbas.ai@gmail.com</b></a></p>
 
-### AI • ROBOTICS • EMBEDDED SYSTEMS
+## Featured work
 
-Building intelligent systems that connect AI with the physical world.
+<p align="center"><a href="https://github.com/Mohid-Abbas/synapse-context-aware-companion"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/generated/card-0-dark.svg?v=ad18b89c"><source media="(prefers-color-scheme: light)" srcset="assets/generated/card-0-light.svg?v=fe171378"><img alt="synapse-context-aware-companion: Synapse is a context-aware wearable AI companion. ESP32-based locket for gesture control and audio input, paired with a processing hub for real-time speech-to-text." src="assets/generated/card-0-dark.svg?v=ad18b89c" width="49%"></picture></a>&nbsp;<a href="https://github.com/Mohid-Abbas/medidash-autonomous-vehicle"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/generated/card-1-dark.svg?v=6131c187"><source media="(prefers-color-scheme: light)" srcset="assets/generated/card-1-light.svg?v=d60e3a30"><img alt="medidash-autonomous-vehicle: MediDash: Autonomous Medical Delivery Robot. An ESP32-powered mobile agent for hospital logistics with FSM-driven navigation and PID-controlled steering." src="assets/generated/card-1-dark.svg?v=6131c187" width="49%"></picture></a></p>
 
-<img src="./assets/robot/robot.gif" width="190" alt="Animated robot mascot">
+<p align="center"><a href="https://github.com/Mohid-Abbas/cmapss-iot-predictive-pipeline"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/generated/card-2-dark.svg?v=2cbc1509"><source media="(prefers-color-scheme: light)" srcset="assets/generated/card-2-light.svg?v=4de27a38"><img alt="cmapss-iot-predictive-pipeline: End-to-end ML pipeline for Remaining Useful Life (RUL) prediction on NASA C-MAPSS turbofan engine data." src="assets/generated/card-2-dark.svg?v=2cbc1509" width="49%"></picture></a>&nbsp;<a href="https://github.com/Mohid-Abbas/explainable-network-intrusion-detection"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/generated/card-3-dark.svg?v=d6fef4bc"><source media="(prefers-color-scheme: light)" srcset="assets/generated/card-3-light.svg?v=5e87c1aa"><img alt="explainable-network-intrusion-detection: A production-style NIDS using XGBoost/LightGBM on CIC-IDS2017 to classify network traffic, with SHAP explainability." src="assets/generated/card-3-dark.svg?v=d6fef4bc" width="49%"></picture></a></p>
 
-[GitHub](https://github.com/Mohid-Abbas) · [LinkedIn](https://www.linkedin.com/in/muhammad-mohid-abbas/) · [Email](mailto:mohidabbas.ai@gmail.com)
+<p align="center"><a href="https://github.com/Mohid-Abbas/rag-document-assistant"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/generated/card-4-dark.svg?v=40167fe3"><source media="(prefers-color-scheme: light)" srcset="assets/generated/card-4-light.svg?v=8a34a924"><img alt="rag-document-assistant: LangGraph-powered reasoning engine, LangChain integration, and a containerized FastAPI backend with ChromaDB vector storage." src="assets/generated/card-4-dark.svg?v=40167fe3" width="49%"></picture></a>&nbsp;<a href="https://github.com/Mohid-Abbas/ai-workflow-platform"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/generated/card-5-dark.svg?v=6ce02cd5"><source media="(prefers-color-scheme: light)" srcset="assets/generated/card-5-light.svg?v=0b5d7c1c"><img alt="ai-workflow-platform: A high-performance automation ecosystem built on n8n that orchestrates workflows across 15+ services including Gmail, Slack and Notion." src="assets/generated/card-5-dark.svg?v=6ce02cd5" width="49%"></picture></a></p>
 
-</div>
+## Stack
 
----
+<p align="center"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/generated/stack-dark.svg?v=e9201c11"><source media="(prefers-color-scheme: light)" srcset="assets/generated/stack-light.svg?v=d59cdb1f"><img alt="Stack: BACKEND – Python, FastAPI, REST APIs, Docker; AI / LLM – RAG, LangChain, LangGraph, ChromaDB, n8n; ML – PyTorch, XGBoost, LightGBM, SHAP; EMBEDDED – C++, ESP32, PID control, Sensors" src="assets/generated/stack-dark.svg?v=e9201c11" width="100%"></picture></p>
 
-```text
-mohid@github:~$ ./contributions.sh
-```
+## Activity
 
-<div align="center">
-<img src="./assets/heatmap/contributions.gif" width="900" alt="Animated GitHub contribution heatmap">
-</div>
+<p align="center"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/generated/activity-dark.svg?v=9334d5c2"><source media="(prefers-color-scheme: light)" srcset="assets/generated/activity-light.svg?v=d199e3ee"><img alt="5241 contributions in the last year, 218 active days" src="assets/generated/activity-dark.svg?v=9334d5c2" width="100%"></picture></p>
 
-```text
-mohid@github:~$ whoami
-```
+<p align="center"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/generated/languages-dark.svg?v=aef0626b"><source media="(prefers-color-scheme: light)" srcset="assets/generated/languages-light.svg?v=befb874e"><img alt="Top languages by code size" src="assets/generated/languages-dark.svg?v=aef0626b" width="49%"></picture>&nbsp;<picture><source media="(prefers-color-scheme: dark)" srcset="assets/generated/months-dark.svg?v=f59eb359"><source media="(prefers-color-scheme: light)" srcset="assets/generated/months-light.svg?v=d5f2ae69"><img alt="Contributions by month, last 12 months" src="assets/generated/months-dark.svg?v=f59eb359" width="49%"></picture></p>
 
-```text
-USER       : Muhammad Mohid Abbas
-ROLE       : BSAI Student
-FOCUS      : AI / Robotics / Embedded Systems
-
-STATUS     : Building intelligent systems
-
-CURRENT STACK
-├── Python / Machine Learning
-├── Generative AI / RAG
-├── AI Agents / LangGraph / n8n
-├── ROS2
-└── ESP32 / Embedded Systems
-```
-
-```text
-mohid@github:~$ ls projects/
-```
-
-| Project | What it does |
-|---|---|
-| **MediDash** | Autonomous medical delivery robot |
-| **RAG Document Assistant** | Retrieval-augmented AI system |
-| **Saiyan AR** | Real-time gesture-controlled AR |
-| **Synapse** | Wearable AI companion |
-
-```text
-mohid@github:~$ cat tech_stack/
-```
-
-**AI / ML** · Python · PyTorch · Machine Learning · Generative AI  
-**AI Systems** · RAG · AI Agents · LangGraph · n8n  
-**Robotics** · ROS2 · ESP32 · PID · Sensors  
-**Tools** · Git · GitHub · Linux · VS Code
-
-```text
-mohid@github:~$ connect
-```
-
-[GitHub](https://github.com/Mohid-Abbas) · [LinkedIn](https://www.linkedin.com/in/muhammad-mohid-abbas/) · [Email](mailto:mohidabbas.ai@gmail.com)
-
-<div align="center">
-
-`Code • Build • Innovate`
-
-</div>
+<p align="center"><sub>Everything above except this line regenerates itself from live GitHub data · <a href=".github/workflows/update-profile.yml">how it works</a></sub></p>
