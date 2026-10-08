@@ -1,65 +1,83 @@
 import json
-import re
+import os
 from datetime import datetime, timezone
 from pathlib import Path
 
 import requests
-from bs4 import BeautifulSoup
 
 USERNAME = "Mohid-Abbas"
-URL = f"https://github.com/users/{USERNAME}/contributions"
+API = "https://api.github.com/graphql"
 ROOT = Path(__file__).resolve().parents[1]
 OUT = ROOT / "data/contributions.json"
 
-HEADERS = {
-    "User-Agent": "Mozilla/5.0 (compatible; Mohid-Abbas-profile-readme/2.0)",
-    "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8",
+QUERY = """
+query($login: String!) {
+  user(login: $login) {
+    contributionsCollection {
+      contributionCalendar {
+        totalContributions
+        weeks {
+          contributionDays {
+            date
+            contributionCount
+            contributionLevel
+            color
+          }
+        }
+      }
+    }
+  }
 }
+"""
 
-r = requests.get(URL, headers=HEADERS, timeout=30)
+token = os.environ.get("GITHUB_TOKEN")
+if not token:
+    raise RuntimeError("GITHUB_TOKEN is required. The GitHub Action supplies it automatically.")
+
+r = requests.post(
+    API,
+    json={"query": QUERY, "variables": {"login": USERNAME}},
+    headers={
+        "Authorization": f"Bearer {token}",
+        "Accept": "application/vnd.github+json",
+        "X-GitHub-Api-Version": "2022-11-28",
+    },
+    timeout=30,
+)
 r.raise_for_status()
+payload = r.json()
+if payload.get("errors"):
+    raise RuntimeError(json.dumps(payload["errors"], indent=2))
 
-soup = BeautifulSoup(r.text, "html.parser")
+calendar = payload["data"]["user"]["contributionsCollection"]["contributionCalendar"]
 
-# GitHub currently exposes the calendar as <td class="ContributionCalendar-day" ...>.
-cells = soup.select("td.ContributionCalendar-day[data-date][data-level]")
-if not cells:
-    raise RuntimeError(
-        "GitHub returned no contribution cells. Refusing to overwrite the existing graph."
-    )
+def level(value: str) -> int:
+    return {
+        "NONE": 0,
+        "FIRST_QUARTILE": 1,
+        "SECOND_QUARTILE": 2,
+        "THIRD_QUARTILE": 3,
+        "FOURTH_QUARTILE": 4,
+    }.get(value, 0)
 
-# Exact counts are stored in <tool-tip for="CELL_ID">... contributions ...</tool-tip>.
-tooltips = {}
-for tip in soup.find_all("tool-tip"):
-    cell_id = tip.get("for")
-    if not cell_id:
-        continue
-    text = tip.get_text(" ", strip=True)
-    m = re.search(r"([\d,]+)\s+contribution", text)
-    if m:
-        tooltips[cell_id] = int(m.group(1).replace(",", ""))
-
-# If GitHub changes the tooltip markup, level/date data is still useful.
 days = []
-for cell in cells:
-    date = cell.get("data-date")
-    level = max(0, min(4, int(cell.get("data-level", "0"))))
-    count = tooltips.get(cell.get("id"), 0 if level == 0 else None)
-    days.append({"date": date, "level": level, "count": count})
+for week in calendar["weeks"]:
+    for day in week["contributionDays"]:
+        days.append({
+            "date": day["date"],
+            "count": day["contributionCount"],
+            "level": level(day["contributionLevel"]),
+            "color": day["color"],
+        })
 
-# Prefer the exact total shown by GitHub's contribution page.
-total = None
-heading = soup.get_text(" ", strip=True)
-m = re.search(r"([\d,]+) contributions? in the last year", heading)
-if m:
-    total = int(m.group(1).replace(",", ""))
+if len(days) < 300:
+    raise RuntimeError(f"GitHub returned only {len(days)} days; refusing to replace the graph.")
 
-payload = {
+result = {
     "username": USERNAME,
     "updated_at": datetime.now(timezone.utc).isoformat(),
-    "total": total,
+    "total": calendar["totalContributions"],
     "days": days,
 }
-
-OUT.write_text(json.dumps(payload, indent=2), encoding="utf-8")
-print(f"Saved {len(days)} contribution days; total={total}.")
+OUT.write_text(json.dumps(result, indent=2), encoding="utf-8")
+print(f"Fetched {len(days)} days; total={result['total']}.")
