@@ -176,52 +176,8 @@
    "url": "https://github.com/Mohid-Abbas/rag-document-assistant"
   }
  ],
- "total": 9329,
+ "total": 9337,
  "weeks": [
-  [
-   {
-    "count": 0,
-    "date": "2025-11-09",
-    "level": 0,
-    "weekday": 0
-   },
-   {
-    "count": 0,
-    "date": "2025-11-10",
-    "level": 0,
-    "weekday": 1
-   },
-   {
-    "count": 0,
-    "date": "2025-11-11",
-    "level": 0,
-    "weekday": 2
-   },
-   {
-    "count": 0,
-    "date": "2025-11-12",
-    "level": 0,
-    "weekday": 3
-   },
-   {
-    "count": 0,
-    "date": "2025-11-13",
-    "level": 0,
-    "weekday": 4
-   },
-   {
-    "count": 0,
-    "date": "2025-11-14",
-    "level": 0,
-    "weekday": 5
-   },
-   {
-    "count": 0,
-    "date": "2025-11-15",
-    "level": 0,
-    "weekday": 6
-   }
-  ],
   [
    {
     "count": 0,
@@ -2508,6 +2464,14 @@
     "date": "2026-11-14",
     "level": 1,
     "weekday": 6
+   }
+  ],
+  [
+   {
+    "count": 8,
+    "date": "2026-11-15",
+    "level": 1,
+    "weekday": 0
    }
   ]
  ]
