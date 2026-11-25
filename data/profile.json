@@ -1,7 +1,8 @@
 {
  "demo": false,
  "languages": {
-  "Batchfile": 875,
+  "Batchfile": 1828,
+  "BibTeX Style": 397457,
   "C": 2248491,
   "C++": 11834181,
   "CSS": 168449,
@@ -12,10 +13,10 @@
   "Jupyter Notebook": 745,
   "Makefile": 30583,
   "Perl": 5419,
-  "PowerShell": 819,
-  "Python": 610809,
+  "PowerShell": 2194,
+  "Python": 778073,
   "Shell": 5045,
-  "TeX": 29077,
+  "TeX": 427132,
   "TypeScript": 10276
  },
  "login": "Mohid-Abbas",
@@ -76,6 +77,15 @@
   }
  ],
  "recent": [
+  {
+   "description": "FedZT-Edge is a federated, Zero-Trust intrusion detection framework for resource-constrained edge networks, combining collaborative learning, adaptive security policies, cryptographic protection, and WebAssembly-inspired execution evaluation.",
+   "forks": 1,
+   "language": "TeX",
+   "name": "FedZT-Edge--Federated-Zero-Trust-WebAssembly-Based-Intrusion-Detection-for-Constrained-Edge-Networks",
+   "stars": 0,
+   "topics": [],
+   "url": "https://github.com/Mohid-Abbas/FedZT-Edge--Federated-Zero-Trust-WebAssembly-Based-Intrusion-Detection-for-Constrained-Edge-Networks"
+  },
   {
    "description": "High-performance CV bridging human kinematics and generative art. Leveraging MediaPipe and a custom 2D physics engine, it transforms live motion into ethereal particle systems. Featuring Motion History Imaging (MHI), the system creates a \"digital aura\" that reacts fluidly to a user\u2019s speed and posture in real-time.",
    "forks": 1,
@@ -165,18 +175,9 @@
    "stars": 0,
    "topics": [],
    "url": "https://github.com/Mohid-Abbas/RealTime-Gesture-Controlled-AR-Engine"
-  },
-  {
-   "description": "LangGraph-powered reasoning engine, LangChain integration, and a containerized FastAPI backend. Includes automated data ingestion via n8n and scalable ChromaDB vector storage.",
-   "forks": 0,
-   "language": "Python",
-   "name": "rag-document-assistant",
-   "stars": 0,
-   "topics": [],
-   "url": "https://github.com/Mohid-Abbas/rag-document-assistant"
   }
  ],
- "total": 9507,
+ "total": 9540,
  "weeks": [
   [
    {
@@ -2486,7 +2487,7 @@
     "weekday": 2
    },
    {
-    "count": 8,
+    "count": 41,
     "date": "2026-11-25",
     "level": 1,
     "weekday": 3
