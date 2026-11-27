@@ -1,8 +1,7 @@
 {
  "demo": false,
  "languages": {
-  "Batchfile": 1828,
-  "BibTeX Style": 397457,
+  "Batchfile": 875,
   "C": 2248491,
   "C++": 11834181,
   "CSS": 168449,
@@ -13,10 +12,10 @@
   "Jupyter Notebook": 745,
   "Makefile": 30583,
   "Perl": 5419,
-  "PowerShell": 2194,
-  "Python": 778073,
+  "PowerShell": 819,
+  "Python": 610951,
   "Shell": 5045,
-  "TeX": 427132,
+  "TeX": 33253,
   "TypeScript": 10276
  },
  "login": "Mohid-Abbas",
@@ -177,7 +176,7 @@
    "url": "https://github.com/Mohid-Abbas/RealTime-Gesture-Controlled-AR-Engine"
   }
  ],
- "total": 9570,
+ "total": 9577,
  "weeks": [
   [
    {
@@ -2499,7 +2498,7 @@
     "weekday": 4
    },
    {
-    "count": 10,
+    "count": 17,
     "date": "2026-11-27",
     "level": 1,
     "weekday": 5
